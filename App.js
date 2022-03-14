@@ -217,7 +217,9 @@ const App: () => Node = () => {
 
   return (
     <>
-      <Dialog.Container visible={resetDialogVisible}>
+      <Dialog.Container
+        visible={resetDialogVisible}
+        contentStyle={styles.dialogContainer}>
         <Dialog.Title>Configurar tablero</Dialog.Title>
         <Dialog.Description>
           Introducir altura y anchura u omitir valor para continuar con mismas
@@ -233,7 +235,9 @@ const App: () => Node = () => {
           }}
         />
       </Dialog.Container>
-      <Dialog.Container visible={riskyDialogVisible}>
+      <Dialog.Container
+        visible={riskyDialogVisible}
+        contentStyle={styles.dialogContainer}>
         <Dialog.Title>Valor de riesgo</Dialog.Title>
         <Dialog.Description>Introducir valor de riesgo</Dialog.Description>
         <Dialog.CodeInput codeLength={2} onCodeChange={setRiskyValue} />
@@ -330,6 +334,10 @@ const App: () => Node = () => {
 };
 
 const styles = StyleSheet.create({
+  dialogContainer: {
+    width: screenWidth - 5,
+  },
+
   container: {
     flexDirection: 'column',
     alignItems: 'center',
